@@ -1,36 +1,52 @@
 import React from "react";
+import styled from 'styled-components'
 
+// Styling
+const ProjectsDiv = styled.div`
+    // border: 2px solid red;
+    padding: 30vh 20vw;
+    font-size: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`;
+
+const ProjectDiv = styled.div`
+    // border: 2px solid red;
+    font-size: 2.25vh;
+    display: flex;
+`;
+
+// Projects Component
 const Projects = (props) => {
     return (
-        <div id="projects">
-        <div class="heading">
+        <ProjectsDiv>
             <h1>Projects</h1>
-        </div>
-        <div class="project">
-            <div class="left">
-                <img src="#" alt="Project cover"/>
-            </div>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus iusto ut temporibus assumenda sequi consectetur neque commodi suscipit vitae quo, exercitationem, similique repudiandae, dignissimos quos quas facere error nesciunt?</p>
-            </div>
-        </div>
-        <div class="project">
-            <div class="left">
-                <img src="#" alt="Project cover" />
-            </div>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus iusto ut temporibus assumenda sequi consectetur neque commodi suscipit vitae quo, exercitationem, similique repudiandae, dignissimos quos quas facere error nesciunt?</p>
-            </div>
-        </div>
-        <div class="project">
-            <div class="left">
-                <img src="#" alt="Project cover" />
-            </div>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus iusto ut temporibus assumenda sequi consectetur neque commodi suscipit vitae quo, exercitationem, similique repudiandae, dignissimos quos quas facere error nesciunt?</p>
-            </div>
-        </div>
-    </div>
+            <ProjectDiv>
+                <div>
+                    <img src="#" alt="Project icon" />
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste omnis accusamus non quo? Nemo, cum provident. Exercitationem, quas vitae? Magnam aut dolores maxime praesentium perferendis tenetur exercitationem ipsa quo ducimus.</p>
+                </div>
+            </ProjectDiv>
+            <ProjectDiv>
+                <div>
+                    <img src="#" alt="Project icon" />
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste omnis accusamus non quo? Nemo, cum provident. Exercitationem, quas vitae? Magnam aut dolores maxime praesentium perferendis tenetur exercitationem ipsa quo ducimus.</p>
+                </div>
+            </ProjectDiv>
+            <ProjectDiv>
+                <div>
+                    <img src="#" alt="Project icon" />
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste omnis accusamus non quo? Nemo, cum provident. Exercitationem, quas vitae? Magnam aut dolores maxime praesentium perferendis tenetur exercitationem ipsa quo ducimus.</p>
+                </div>
+            </ProjectDiv>
+        </ProjectsDiv>
     )
 }
 

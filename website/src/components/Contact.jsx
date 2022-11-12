@@ -1,30 +1,40 @@
 import React from "react";
+import styled from 'styled-components';
 
+// Styling
+const ContactDiv = styled.div`
+    padding: 30vh 20vw;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+`;
+
+// Contact Component
 const Contact = (props) => {
     return (
-        <div id="contact">
-            <div class="left">
-                <h2>Let's connect</h2>
+        <ContactDiv>
+            <div>
+                <h1>Let's Connect</h1>
                 <form action="#">
                     <div>
-                        <label for="">Subject</label>
-                        <input type="text" name="" id="" />
+                        <label htmlFor="">Subject</label>
+                        <input type="text"/>
                     </div>
                     <div>
-                        <label for="">Message</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <label htmlFor="">Message</label>
+                        <textarea></textarea>
                     </div>
                     <div>
                         <input type="submit" value="Submit" />
                     </div>
                 </form>
             </div>
-            <div class="right">
-                <h2>Find me here</h2>
+            <div>
+                <h1>Find Me</h1>
                 <a href="https://github.com/emilio-fv" target="_blank" rel="noopener noreferrer">Github</a>
                 <a href="http://www.linkedin.com/in/emiliofv" target="_blank" rel="noopener noreferrer">Linkedin</a>
             </div>
-        </div>
+        </ContactDiv>
     )
 }
 
