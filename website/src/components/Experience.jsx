@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Styling
 const ExperienceDiv = styled.div`
     // border: 2px solid red;
-    padding: 30vh 20vw;
+    padding: 30vh 15vw;
     font-size: 3vh;
     display: flex;
     flex-direction: column;
