@@ -18,7 +18,6 @@ const ProjectDiv = styled.div`
 `;
 
 
-
 const StyledImg = styled.img.attrs(props => ({
     src: props.Img
 }))`

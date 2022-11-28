@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 
 // Styling
@@ -11,8 +11,8 @@ const ContactDiv = styled.div`
 `;
 
 const MainDiv = styled.div`
+// border: 2px solid red;
     display: flex;
-    border: 2px solid red;
 `;
 
 const LeftDiv = styled.div`
@@ -34,20 +34,49 @@ const RightDiv = styled.div`
 
 // Contact Component
 const Contact = (props) => {
+    const [ formData, setFormData ] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: '',
+        mailSent: false,
+        error: null
+    })
+
+    const handleChange = (e) => {
+        console.log(e.target.name)
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // make axios post request
+    }
     return (
         <>
             <ContactDiv>
                 <h1>Let's Connect</h1>
                 <MainDiv>
                     <LeftDiv>
-                        <form action="#">
+                        <form action="#" onSubmit={e => handleSubmit(e) }>
                             <div>
-                                <label htmlFor="">Subject</label>
-                                <input type="text"/>
+                                <label>First Name:</label>
+                                <input type="text" name="firstName" onChange={e => handleChange(e)}/>
                             </div>
                             <div>
-                                <label htmlFor="">Message</label>
-                                <textarea></textarea>
+                                <label>Last Name:</label>
+                                <input type="text" name="lastName" onChange={e => handleChange(e)}/>
+                            </div>
+                            <div>
+                                <label>Email:</label>
+                                <input type="email" name="email" onChange={e => handleChange(e)}/>
+                            </div>
+                            <div>
+                                <label>Message:</label>
+                                <textarea name="message" onChange={e => handleChange(e) }></textarea>
                             </div>
                             <div>
                                 <input type="submit" value="Submit" />
@@ -60,7 +89,7 @@ const Contact = (props) => {
                     </RightDiv>
                 </MainDiv>
             </ContactDiv>
-            <p style={{ textAlign: 'center', fontSize: '3vh', marginBottom: '2vh'}}>Designed & Built by Emilio Vazquez</p>
+            <p style={{ textAlign: 'center', fontSize: '2.5vh', marginBottom: '2vh'}}>Designed & Built by Emilio Vazquez</p>
         </>
     )
 }
