@@ -35,7 +35,7 @@ const NavButton = styled.button`
 
 // Navbar Component
 const Navbar = (props) => {
-    const executeScroll = props.executeScroll;
+    const handleClick = props.handleClick;
 
     // Animations
     const firstItem = useSpring({
@@ -73,7 +73,7 @@ const Navbar = (props) => {
         <Nav>
             <NavMenu>
                 <animated.div style={ firstItem }>
-                    <NavItem><span onClick={ executeScroll }>About</span></NavItem>
+                    <NavItem><span onClick={ handleClick }>About</span></NavItem>
                 </animated.div>
                 <animated.div style={ secondItem }>
                     <NavItem>Projects</NavItem>

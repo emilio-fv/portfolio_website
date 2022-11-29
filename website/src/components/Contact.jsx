@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import { send } from 'emailjs-com';
 
 // Styling
 const ContactDiv = styled.div`
@@ -53,7 +54,14 @@ const Contact = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // make axios post request
+        send(
+            'portfolio_website',
+            'template_jbnjdgf',
+            formData,
+            'tHeaGfRdFZHccy_bq'
+        )
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
     }
     return (
         <>

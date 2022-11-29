@@ -8,17 +8,17 @@ import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 
 const Main = (props) => {
-    const aboutRef = useRef();
+    const ref = useRef(null);
 
-    const executeScroll = () => {
-        console.log("click");
+    const handleClick = () => {
+        ref.current?.scrollIntoView({behavior: 'smooth'});
     }
 
     return (
         <>
-            <Navbar />
+            <Navbar handleClick={ handleClick } />
             <Intro />
-            <About ref={ aboutRef } executeScroll={ executeScroll }/>
+            <About ref={ ref }/>
             <Projects />
             <Experience />
             <Contact />
