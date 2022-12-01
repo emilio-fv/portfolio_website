@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from 'styled-components';
 
 // Styling
@@ -20,9 +20,9 @@ const Entry = styled.div`
 `;
 
 // Experience Component
-const Experience = (props) => {
+const Experience = forwardRef((props, ref) => {
     return (
-        <ExperienceDiv>
+        <ExperienceDiv ref={ ref } >
             <h1>Experience</h1>
             <Entry>
                 <div>
@@ -53,6 +53,6 @@ const Experience = (props) => {
             </Entry>
         </ExperienceDiv>
     )
-}
+});
 
 export default Experience;

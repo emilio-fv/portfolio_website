@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { animated, config, useSpring } from "react-spring";
 import styled from 'styled-components';
 
 // Styling
 const Nav = styled.nav`
-    // border: 2px solid red; // BORDER CHECK
     height: 8vh;
     display: flex;
     justify-content: flex-end;
@@ -20,22 +19,55 @@ const NavMenu = styled.ul`
     gap: 3.5vw;
 `;
 
-const NavItem = styled.li`
+const NavLink = styled.li`
     list-style: none;
     font-size: 2.75vh;
 `;
 
-const NavButton = styled.button`
+const Button = styled.button`
     padding: 1vh 1vw;
-    border: .5px solid #bae8e8;
+    border: none;
     font-size: 2.75vh;
     background-color: black;
+    &:hover {
+        // text-decoration: underline;
+        color: grey;
+    }
+    `;
+
+const ResumeButton = styled(Button)`
+    border: .5px solid #bae8e8;
     // box-shadow: 2px 2px #bae8e8;
+    &:hover {
+        // background-color: white;
+        // color: black;
+        border: .5px solid grey;
+        text-decoration: none;
+    }
 `;
 
 // Navbar Component
-const Navbar = (props) => {
-    const handleClick = props.handleClick;
+const Navbar = ({ aboutRef, projectsRef, experienceRef, contactRef }) => {
+
+    const handleAboutClick = (e) => {
+        aboutRef.current.scrollIntoView({ behavior: "smooth" });
+        
+    }
+    
+    const handleProjectsClick = (e) => {
+        projectsRef.current.scrollIntoView({ behavior: "smooth" });
+        
+    }
+    
+    const handleExperienceClick = (e) => {
+        experienceRef.current.scrollIntoView({ behavior: "smooth" });
+        
+    }
+    
+    const handleContactClick = (e) => {
+        contactRef.current.scrollIntoView({ behavior: "smooth" });
+        
+    }
 
     // Animations
     const firstItem = useSpring({
@@ -73,21 +105,20 @@ const Navbar = (props) => {
         <Nav>
             <NavMenu>
                 <animated.div style={ firstItem }>
-                    <NavItem><span onClick={ handleClick }>About</span></NavItem>
+                    <NavLink><Button onClick={e => handleAboutClick() } >About</Button></NavLink>
                 </animated.div>
                 <animated.div style={ secondItem }>
-                    <NavItem>Projects</NavItem>
+                    <NavLink><Button onClick={e => handleProjectsClick() }>Projects</Button></NavLink>
                 </animated.div>
                 <animated.div style={ thirdItem  }>
-                    <NavItem>Experience</NavItem>
+                    <NavLink><Button onClick={e => handleExperienceClick() }>Experience</Button></NavLink>
                 </animated.div>
                 <animated.div style={ fourthItem }>
-                    <NavItem>Contact</NavItem>
+                    <NavLink><Button onClick={e => handleContactClick() }>Contact</Button></NavLink>
                 </animated.div>
                 <animated.div style={ fifthItem }>
-                    <NavItem><NavButton>Resume</NavButton></NavItem>
+                    <NavLink><ResumeButton>Resume</ResumeButton></NavLink>
                 </animated.div>
-
             </NavMenu>
         </Nav>
     )

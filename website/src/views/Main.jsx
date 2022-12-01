@@ -1,4 +1,3 @@
-import '../App.css'
 import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Intro from "../components/Intro";
@@ -6,22 +5,23 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
+import '../App.css'
 
 const Main = (props) => {
-    const ref = useRef(null);
+    const aboutRef = useRef(null);
+    const projectsRef = useRef(null);
+    const experienceRef = useRef(null);
+    const contactRef = useRef(null);
 
-    const handleClick = () => {
-        ref.current?.scrollIntoView({behavior: 'smooth'});
-    }
-
+    
     return (
         <>
-            <Navbar handleClick={ handleClick } />
+            <Navbar aboutRef={ aboutRef } projectsRef={ projectsRef } experienceRef={ experienceRef } contactRef = { contactRef }/>
             <Intro />
-            <About ref={ ref }/>
-            <Projects />
-            <Experience />
-            <Contact />
+            <About ref={ aboutRef }/>
+            <Projects ref={ projectsRef }/>
+            <Experience ref={ experienceRef }/>
+            <Contact ref={ contactRef }/>
         </>
     )
 }
