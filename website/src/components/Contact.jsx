@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import styled from 'styled-components';
 import { send } from 'emailjs-com';
 
 // Styling
 const ContactDiv = styled.div`
     font-size: 3vh;
-    padding: 30vh 15vw 35vh 15vw;
+    padding: 20vh 15vw 35vh 15vw;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -34,7 +34,7 @@ const RightDiv = styled.div`
 `;
 
 // Contact Component
-const Contact = (props) => {
+const Contact = forwardRef((props, ref) => {
     const [ formData, setFormData ] = useState({
         firstName: '',
         lastName: '',
@@ -65,7 +65,7 @@ const Contact = (props) => {
     }
     return (
         <>
-            <ContactDiv>
+            <ContactDiv ref={ ref }>
                 <h1>Let's Connect</h1>
                 <MainDiv>
                     <LeftDiv>
@@ -100,6 +100,6 @@ const Contact = (props) => {
             <p style={{ textAlign: 'center', fontSize: '2.5vh', marginBottom: '2vh'}}>Designed & Built by Emilio Vazquez</p>
         </>
     )
-}
+});
 
 export default Contact; 

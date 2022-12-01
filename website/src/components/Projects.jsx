@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from 'styled-components'
 
 // Styling
 const ProjectsDiv = styled.div`
     // border: 2px solid red;
-    padding: 30vh 15vw;
+    padding: 20vh 15vw 30vh 15vw;
     font-size: 3vh;
     display: flex;
     flex-direction: column;
@@ -27,9 +27,9 @@ const StyledImg = styled.img.attrs(props => ({
 `;
 
 // Projects Component
-const Projects = (props) => {
+const Projects = forwardRef((props, ref) => {
     return (
-        <ProjectsDiv>
+        <ProjectsDiv ref={ref}>
             <h1>Projects</h1>
             <ProjectDiv>
                 <div>
@@ -65,6 +65,6 @@ const Projects = (props) => {
             </ProjectDiv>
         </ProjectsDiv>
     )
-}
+});
 
 export default Projects;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from 'styled-components';
 import Headshot from '../img/haedshot.JPG';
 import Headshot2 from '../img/headshot2.jpg';
@@ -6,7 +6,7 @@ import Headshot2 from '../img/headshot2.jpg';
 // Styling
 const AboutDiv = styled.div`
     // border: 2px solid red;
-    padding: 30vh 15vw;
+    padding: 15vh 15vw 30vh 15vw;
 `;
 
 const Header = styled.div`
@@ -33,9 +33,9 @@ const ImageDiv = styled.div`
 
 
 // About Component
-const About = (props) => {
+const About = forwardRef((props, ref) => {
     return (
-        <AboutDiv>
+        <AboutDiv ref={ ref }>
             <Header>
                 <h1>About</h1>
             </Header>
@@ -48,6 +48,6 @@ const About = (props) => {
             </Body>
         </AboutDiv>
     )
-}
+});
 
 export default About;
