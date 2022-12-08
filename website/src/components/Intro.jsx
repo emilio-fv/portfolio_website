@@ -1,17 +1,7 @@
-import styled from 'styled-components';
+import React from 'react';
 import { animated, config, useSpring } from 'react-spring';
+import { IntroDiv } from './styles/Intro.styled';
 
-// Styling
-const IntroDiv = styled.div`
-    // border: 2px solid red;
-    padding: 30vh 15vw;
-    font-size: 4.5vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-`;
-
-// Intro component
 const Intro = () => {
     // Animations
     const topText = useSpring({
@@ -32,7 +22,6 @@ const Intro = () => {
         delay: 725,
         config: config.molasses,
     })
-
 
     return (
         <IntroDiv>

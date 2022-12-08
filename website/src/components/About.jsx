@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import styled from 'styled-components';
-import Headshot from '../img/haedshot.JPG';
 import Headshot2 from '../img/headshot2.jpg';
 
 // Styling

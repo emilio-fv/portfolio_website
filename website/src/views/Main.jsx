@@ -13,7 +13,6 @@ const Main = (props) => {
     const experienceRef = useRef(null);
     const contactRef = useRef(null);
 
-    
     return (
         <>
             <Navbar aboutRef={ aboutRef } projectsRef={ projectsRef } experienceRef={ experienceRef } contactRef = { contactRef }/>
